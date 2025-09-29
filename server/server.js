@@ -24,7 +24,7 @@ app.use("/api/session-notes", sessionNotesRoutes); // 👈 Add session notes rou
 
 // MongoDB Connect
 mongoose
-  .connect("mongodb://localhost:27017/mindmend", {
+  .connect("mongodb+srv://rishavkumar33372_db_user:RjwJw3vE29wddctu@mindmend.bocu3wz.mongodb.net/?retryWrites=true&w=majority&appName=mindmend", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
