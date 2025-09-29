@@ -17,4 +17,7 @@ export default defineConfig({
       },
     },
   },
+  build: {
+    outDir: 'dist',  // This specifies the build directory (default is 'dist')
+  },
 });
