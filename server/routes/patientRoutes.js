@@ -26,16 +26,22 @@ router.post("/:id/photo", upload.single("photo"), patientController.uploadPhoto)
 router.get("/by-therapist/:therapistId", async (req, res) => {
   try {
     const therapistId = req.params.therapistId;
+    console.log("➡ Therapist ID:", therapistId);
     const bookings = await Booking.find({ therapist: therapistId });
+    console.log("📒 Bookings found:", bookings.length);
     if (!bookings || bookings.length === 0) {
+      console.log("⚠️ No bookings found for therapist.");
       return res.json([]);
     }
     const patientIds = [...new Set(bookings.map(b => b.user.toString()))];
+    console.log("🆔 Patient IDs:", patientIds);
     const patients = await User.find({
       _id: { $in: patientIds }
     }).select("name email createdAt photoUrl");
+    console.log("👥 Patients found:", patients.length);
     res.json(patients);
   } catch (error) {
+    console.error("❌ Server error in /by-therapist:", error);
     res.status(500).json({ message: "Server error" });
   }
 });
