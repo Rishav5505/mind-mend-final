@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://localhost:5000/api", // 👈 Tu yahi pe backend chala raha hai
+  baseURL: "https://mind-mend-final-backend.onrender.com", // 👈 Tu yahi pe backend chala raha hai
   headers: {
     "Content-Type": "application/json",
   },
