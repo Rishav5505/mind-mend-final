@@ -41,7 +41,7 @@ app.use("/api/session-notes", sessionNotesRoutes); // 👈 Add session notes rou
 // ✅ Socket.IO Setup 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173", // frontend port
+    origin: "https://mind-mend-final.onrender.com", // frontend port
     methods: ["GET", "POST"],
   },
 });
