@@ -15,7 +15,7 @@ export default function ManagePatients() {
       return;
     }
 
-    fetch(`http://localhost:5000/api/patients/by-therapist/${therapistId}`)
+  fetch(`https://mind-mend-final-backend.onrender.com/api/patients/by-therapist/${therapistId}`)
       .then((res) => {
         if (!res.ok) throw new Error("HTTP " + res.status);
         return res.json();
