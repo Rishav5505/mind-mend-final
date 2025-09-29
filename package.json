@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "framer-motion": "^12.18.1",
-    "nodemailer": "^7.0.4",
-    "react-router-dom": "^7.6.2",
-    "recharts": "^3.0.0"
-  }
-}

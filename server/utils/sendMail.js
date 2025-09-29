@@ -1,7 +1,10 @@
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 
+
+// Always send OTP to the user's signup email (to)
 const sendMail = async ({ to, subject, text }) => {
+  console.log(`Sending OTP to: ${to}`);
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -11,7 +14,7 @@ const sendMail = async ({ to, subject, text }) => {
   });
 
   const mailOptions = {
-    from: process.env.EMAIL_USER,
+    from: process.env.EMAIL_USER, // Gmail only allows sending from authenticated user
     to,
     subject,
     text,
